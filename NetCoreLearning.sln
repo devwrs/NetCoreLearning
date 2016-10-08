@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{63E0A370-6C44-41A5-89B1-EB516AFDD1ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{38720CC4-6608-434A-AA89-2D8478CEC5E6}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NetCoreLearning", "src\NetCoreLearning\NetCoreLearning.xproj", "{C666E50B-5C69-4395-8AFC-5AE2A6B6A9EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C666E50B-5C69-4395-8AFC-5AE2A6B6A9EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C666E50B-5C69-4395-8AFC-5AE2A6B6A9EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C666E50B-5C69-4395-8AFC-5AE2A6B6A9EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C666E50B-5C69-4395-8AFC-5AE2A6B6A9EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C666E50B-5C69-4395-8AFC-5AE2A6B6A9EA} = {63E0A370-6C44-41A5-89B1-EB516AFDD1ED}
+	EndGlobalSection
+EndGlobal
