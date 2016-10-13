@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NetCoreLearning", "src\NetCoreLearning\NetCoreLearning.xproj", "{C666E50B-5C69-4395-8AFC-5AE2A6B6A9EA}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NetCoreLearning.Models", "src\NetCoreLearning.Models\NetCoreLearning.Models.xproj", "{EE896CB1-2CAE-489B-BE21-8E533987D9F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +24,16 @@ Global
 		{C666E50B-5C69-4395-8AFC-5AE2A6B6A9EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C666E50B-5C69-4395-8AFC-5AE2A6B6A9EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C666E50B-5C69-4395-8AFC-5AE2A6B6A9EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE896CB1-2CAE-489B-BE21-8E533987D9F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE896CB1-2CAE-489B-BE21-8E533987D9F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE896CB1-2CAE-489B-BE21-8E533987D9F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE896CB1-2CAE-489B-BE21-8E533987D9F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C666E50B-5C69-4395-8AFC-5AE2A6B6A9EA} = {63E0A370-6C44-41A5-89B1-EB516AFDD1ED}
+		{EE896CB1-2CAE-489B-BE21-8E533987D9F2} = {63E0A370-6C44-41A5-89B1-EB516AFDD1ED}
 	EndGlobalSection
 EndGlobal

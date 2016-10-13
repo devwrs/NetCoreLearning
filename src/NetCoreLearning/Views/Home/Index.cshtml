@@ -1,0 +1,27 @@
+﻿@model IEnumerable<NetCoreLearning.Models.Restaurant>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>OdeToFood</title>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Restaurant Id</th>
+                <th>Restaurant Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var restaurant in Model)
+            {
+                <tr>
+                    <td>@restaurant.Id</td>
+                    <td>@restaurant.Name</td>
+                </tr>               
+            }
+        </tbody>        
+    </table>
+</body>
+</html>

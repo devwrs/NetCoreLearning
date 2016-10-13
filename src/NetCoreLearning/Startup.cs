@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Routing;
+using NetCoreLearning.Services;
 
 namespace NetCoreLearning
 {
@@ -29,8 +31,10 @@ namespace NetCoreLearning
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
             services.AddSingleton(Configuration);
-            services.AddSingleton<IGreeter, Greeter>();            
+            services.AddSingleton<IGreeter, Greeter>();
+            services.AddScoped<IRestaurantData, InMemoryRestaurantData>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,12 +46,34 @@ namespace NetCoreLearning
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.Run(async (context) =>
+            else
             {
-                string message = greeter.GetGreetString();
-                await context.Response.WriteAsync(message);
-            });
+                app.UseExceptionHandler(new ExceptionHandlerOptions
+                {
+                    ExceptionHandler = context => context.Response.WriteAsync("Opps!")
+                });
+            }
+            // serve static file
+            app.UseFileServer();
+
+            app.UseMvc(ConfigureRoutes);  
+
+            //app.UseWelcomePage(new WelcomePageOptions
+            //{
+            //    Path = "/welcome"
+            //});
+
+            //app.Run(async (context) =>
+            //{
+            //    string message = greeter.GetGreetString();
+            //    await context.Response.WriteAsync(message);
+            //});            
+        }
+
+        private void ConfigureRoutes(IRouteBuilder routeBuilder)
+        {
+            routeBuilder.MapRoute("Default",
+                "{controller=Home}/{action=Index}/{id?}");
         }
     }
 }
