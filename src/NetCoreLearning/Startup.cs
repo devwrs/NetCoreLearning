@@ -10,6 +10,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Routing;
 using NetCoreLearning.Services;
+using NetCoreLearning.Repositoy;
+using Microsoft.EntityFrameworkCore;
 
 namespace NetCoreLearning
 {
@@ -34,7 +36,12 @@ namespace NetCoreLearning
             services.AddMvc();
             services.AddSingleton(Configuration);
             services.AddSingleton<IGreeter, Greeter>();
-            services.AddScoped<IRestaurantData, InMemoryRestaurantData>();
+            services.AddScoped<IRestaurantData, SqlRestaurantData>();
+            services.AddDbContext<LearningDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("CoreLearningConnection"),
+                    builder=> builder.MigrationsAssembly("NetCoreLearning.Repositoy"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

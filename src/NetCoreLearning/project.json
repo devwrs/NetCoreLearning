@@ -13,8 +13,10 @@
     "Microsoft.AspNetCore.StaticFiles": "1.0.0",
     "Microsoft.AspNetCore.Mvc.Core": "1.0.1",
     "Microsoft.AspNetCore.Mvc": "1.0.1",
+    "Microsoft.EntityFrameworkCore.Design": "1.0.0-preview2-final",
     "NetCoreLearning.Models": "1.0.0-*",
-    "NetCoreLearning.ViewModels": "1.0.0-*"
+    "NetCoreLearning.ViewModels": "1.0.0-*",
+    "NetCoreLearning.Repositoy": "1.0.0-*"
   },
 
   "tools": {
