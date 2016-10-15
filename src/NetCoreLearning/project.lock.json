@@ -3428,13 +3428,29 @@
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
-          "NETStandard.Library": "1.6.0"
+          "NETStandard.Library": "1.6.0",
+          "System.ComponentModel.Annotations": "4.1.0"
         },
         "compile": {
           "netstandard1.6/NetCoreLearning.Models.dll": {}
         },
         "runtime": {
           "netstandard1.6/NetCoreLearning.Models.dll": {}
+        }
+      },
+      "NetCoreLearning.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "NetCoreLearning.Models": "1.0.0",
+          "System.ComponentModel.Annotations": "4.1.0"
+        },
+        "compile": {
+          "netstandard1.6/NetCoreLearning.ViewModels.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/NetCoreLearning.ViewModels.dll": {}
         }
       }
     }
@@ -9218,6 +9234,11 @@
       "type": "project",
       "path": "../NetCoreLearning.Models/project.json",
       "msbuildProject": "../NetCoreLearning.Models/NetCoreLearning.Models.xproj"
+    },
+    "NetCoreLearning.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../NetCoreLearning.ViewModels/project.json",
+      "msbuildProject": "../NetCoreLearning.ViewModels/NetCoreLearning.ViewModels.xproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -9232,7 +9253,8 @@
       "Microsoft.Extensions.Configuration.Json >= 1.0.0",
       "Microsoft.Extensions.Logging.Console >= 1.0.0",
       "Microsoft.NETCore.App >= 1.0.1",
-      "NetCoreLearning.Models >= 1.0.0-*"
+      "NetCoreLearning.Models >= 1.0.0-*",
+      "NetCoreLearning.ViewModels >= 1.0.0-*"
     ],
     ".NETCoreApp,Version=v1.0": []
   },

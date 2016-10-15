@@ -1,0 +1,12 @@
+﻿@using NetCoreLearning.Controllers
+@model NetCoreLearning.Models.Restaurant
+
+<h1>@nameof(Model.Name): @Model.Name</h1>
+
+<h2>Detail Information</h2>
+<h3>@nameof(Model.Id): @Model.Id</h3>
+<h3>@nameof(Model.Cuisine): @Model.Cuisine</h3>
+
+<div style="margin: 10px 0 0 0">
+    @Html.ActionLink("Back to Home", nameof(HomeController.Index))
+</div>

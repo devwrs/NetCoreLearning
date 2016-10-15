@@ -1,27 +1,36 @@
-﻿@model IEnumerable<NetCoreLearning.Models.Restaurant>
+﻿@using NetCoreLearning.Controllers
+@model NetCoreLearning.ViewModels.HomePageViewModel
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>OdeToFood</title>
+    <style type="text/css">
+        .div-margin {
+            margin: 2% 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome!</h1>
+    <h1>Words form Greeter service: @Model.CurrentMessage!</h1>
+    <div class="div-margin">
+        @Html.ActionLink("Create A New Restaurant", "Create")
+    </div>
     <table>
         <thead>
             <tr>
-                <th>Restaurant Id</th>
+                <th></th>
                 <th>Restaurant Name</th>
             </tr>
         </thead>
-        <tbody>
-            @foreach (var restaurant in Model)
+        <tbody>            
+            @foreach (var restaurant in Model.Restaurants)
             {
                 <tr>
-                    <td>@restaurant.Id</td>
+                    <td>@Html.ActionLink("View Detail", nameof(HomeController.Detail), new { id = @restaurant.Id })</td>
                     <td>@restaurant.Name</td>
-                </tr>               
+                </tr>
             }
-        </tbody>        
+        </tbody>
     </table>
 </body>
 </html>

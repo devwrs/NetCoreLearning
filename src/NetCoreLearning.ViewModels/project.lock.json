@@ -1101,6 +1101,20 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "NetCoreLearning.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.ComponentModel.Annotations": "4.1.0"
+        },
+        "compile": {
+          "netstandard1.6/NetCoreLearning.Models.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/NetCoreLearning.Models.dll": {}
+        }
       }
     }
   },
@@ -4181,11 +4195,17 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
       ]
+    },
+    "NetCoreLearning.Models/1.0.0": {
+      "type": "project",
+      "path": "../NetCoreLearning.Models/project.json",
+      "msbuildProject": "../NetCoreLearning.Models/NetCoreLearning.Models.xproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
       "NETStandard.Library >= 1.6.0",
+      "NetCoreLearning.Models >= 1.0.0-*",
       "System.ComponentModel.Annotations >= 4.1.0"
     ],
     ".NETStandard,Version=v1.6": []
