@@ -1,36 +1,37 @@
-﻿@using NetCoreLearning.Controllers
-@model NetCoreLearning.ViewModels.HomePageViewModel
+﻿@model HomePageViewModel
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>OdeToFood</title>
-    <style type="text/css">
-        .div-margin {
-            margin: 2% 0;
-        }
-    </style>
-</head>
-<body>
-    <h1>Words form Greeter service: @Model.CurrentMessage!</h1>
-    <div class="div-margin">
-        @Html.ActionLink("Create A New Restaurant", "Create")
-    </div>
-    <table>
-        <thead>
-            <tr>
-                <th></th>
-                <th>Restaurant Name</th>
-            </tr>
-        </thead>
-        <tbody>            
-            @foreach (var restaurant in Model.Restaurants)
+@{
+    ViewBag.Title = "Home";
+}
+<style type="text/less">
+    .div-margin {
+        margin: 5% 0;
+    }
+</style>
+
+<div class="div-margin">
+    @*@Html.ActionLink("Create A New Restaurant", "Create")*@
+    <a asp-action="Create">Create A New Restaurant</a>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Restaurant Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var restaurant in Model.Restaurants)
             {
-                <tr>
-                    <td>@Html.ActionLink("View Detail", nameof(HomeController.Detail), new { id = @restaurant.Id })</td>
-                    <td>@restaurant.Name</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</body>
-</html>
+            <tr>
+                @*<td>@Html.ActionLink("View Detail", nameof(HomeController.Detail), new { id = @restaurant.Id })</td>*@
+                <td><a asp-controller="Home" asp-action="Detail" asp-route-id="@restaurant.Id">View Detail</a></td>
+                <td>@restaurant.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section footer{
+    <h1>Words form Greeter service: @Model.CurrentMessage!</h1>
+}

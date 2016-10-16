@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style type="text/css">
+        #layout-footer {
+            margin: 10% 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    <footer id="layout-footer">
+        Today is @DateTime.Today.ToString("yyyy/MM/dd")
+        @RenderSection("footer", required: false)
+    </footer>
+</body>
+</html>

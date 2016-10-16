@@ -48,7 +48,7 @@ namespace NetCoreLearning
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, IGreeter greeter)
         {
             loggerFactory.AddConsole();
-
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

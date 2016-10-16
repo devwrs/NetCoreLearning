@@ -8,9 +8,10 @@ using NetCoreLearning.Repositoy;
 namespace NetCoreLearning.Repositoy.Migrations
 {
     [DbContext(typeof(LearningDbContext))]
-    partial class LearningDbContextModelSnapshot : ModelSnapshot
+    [Migration("20161016052727_add CreateTime column in Restaurant Table")]
+    partial class addCreateTimecolumninRestaurantTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")

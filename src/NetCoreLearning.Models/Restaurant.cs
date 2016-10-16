@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace NetCoreLearning.Models
 {
@@ -18,6 +19,7 @@ namespace NetCoreLearning.Models
         public string Name { get; set; }
         [Required, Display(Name ="Cuisine Type")]
         public CuisineType Cuisine { get; set; }
+        public DateTime? CreateTime { get; set; }
         public Restaurant()
         {
         }
