@@ -13,6 +13,7 @@ namespace NetCoreLearning.Services
         IEnumerable<Restaurant> GetAll();
         Restaurant Get(int id);
         Restaurant Add(Restaurant newRestaurant);
+        void Commit();
     }
 
     public class SqlRestaurantData : IRestaurantData
@@ -24,9 +25,13 @@ namespace NetCoreLearning.Services
         }
         public Restaurant Add(Restaurant newRestaurant)
         {
-            _context.Add(newRestaurant);            
-            _context.SaveChanges();
+            _context.Add(newRestaurant);
             return newRestaurant;
+        }
+
+        public void Commit()
+        {
+            _context.SaveChanges();
         }
 
         public Restaurant Get(int id)
@@ -58,6 +63,11 @@ namespace NetCoreLearning.Services
             newRestaurant.Id = _restaurants.Max(r => r.Id) + 1;
             _restaurants.Add(newRestaurant);
             return newRestaurant;
+        }
+
+        public void Commit()
+        {
+                        
         }
 
         public Restaurant Get(int id)

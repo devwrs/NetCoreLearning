@@ -16,7 +16,7 @@
 <table>
     <thead>
         <tr>
-            <th></th>
+            <th>Action</th>
             <th>Restaurant Name</th>
         </tr>
     </thead>
@@ -25,7 +25,10 @@
             {
             <tr>
                 @*<td>@Html.ActionLink("View Detail", nameof(HomeController.Detail), new { id = @restaurant.Id })</td>*@
-                <td><a asp-controller="Home" asp-action="Detail" asp-route-id="@restaurant.Id">View Detail</a></td>
+                <td>
+                    <a asp-controller="Home" asp-action="Detail" asp-route-id="@restaurant.Id">View Detail</a>
+                    <a asp-action="Edit" asp-route-id="@restaurant.Id">Edit</a>
+                </td>
                 <td>@restaurant.Name</td>
             </tr>
         }

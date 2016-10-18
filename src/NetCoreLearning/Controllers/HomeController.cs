@@ -28,21 +28,21 @@ namespace NetCoreLearning.Controllers
             {
                 CurrentMessage = _greeter.GetGreetString(),
                 Restaurants = _restaurantData.GetAll()
-            };            
-            return View(vm);            
+            };
+            return View(vm);
         }
 
         public IActionResult Detail(int id)
         {
             Restaurant model = _restaurantData.Get(id);
-            if(model == null)
+            if (model == null)
             {
                 return RedirectToAction(nameof(Index));
             }
             else
             {
                 return View(model);
-            }            
+            }
         }
 
         [HttpGet]
@@ -63,12 +63,47 @@ namespace NetCoreLearning.Controllers
                     Cuisine = model.Cuisine
                 };
                 newRestaurant = _restaurantData.Add(newRestaurant);
+                _restaurantData.Commit();
 
                 return RedirectToAction(nameof(Detail), new { id = newRestaurant.Id });
             }
             else
             {
                 return View();
+            }
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            Restaurant model = _restaurantData.Get(id);
+            if (model == null)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(model);
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, RestaurantEditViewModel model)
+        {
+            var restaurant = _restaurantData.Get(id);
+            restaurant.Name = model.Name;
+            restaurant.Cuisine = model.Cuisine;
+
+            if (ModelState.IsValid)
+            {                
+                _restaurantData.Commit();
+                
+                return RedirectToAction(nameof(Detail), new { id = restaurant.Id });
+            }
+            else
+            {
+                return View(restaurant);
             }
         }
     }
