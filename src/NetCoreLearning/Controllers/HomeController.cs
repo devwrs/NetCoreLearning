@@ -32,6 +32,16 @@ namespace NetCoreLearning.Controllers
             return View(vm);
         }
 
+        public IActionResult IndexWithPartialView()
+        {
+            HomePageViewModel vm = new HomePageViewModel
+            {
+                CurrentMessage = _greeter.GetGreetString(),
+                Restaurants = _restaurantData.GetAll()
+            };
+            return View(vm);
+        }
+
         public IActionResult Detail(int id)
         {
             Restaurant model = _restaurantData.Get(id);

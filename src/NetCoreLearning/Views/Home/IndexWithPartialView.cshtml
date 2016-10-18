@@ -1,0 +1,27 @@
+﻿@model HomePageViewModel
+
+@{
+    ViewBag.Title = "Home";
+}
+<style type="text/less">
+    .div-margin {
+        margin: 5% 0;
+    }
+</style>
+
+<div class="div-margin">
+    @*@Html.ActionLink("Create A New Restaurant", "Create")*@
+    <a asp-action="Create">Create A New Restaurant</a>
+</div>
+<table>
+    <tbody>
+        @foreach (var restaurant in Model.Restaurants)
+        {
+            await Html.RenderPartialAsync("_RestaurantInfo", restaurant);
+        }
+    </tbody>
+</table>
+
+@section footer{
+    <h1>Words form Greeter service: @Model.CurrentMessage!</h1>
+}
