@@ -62,7 +62,7 @@ namespace NetCoreLearning
             }
             // serve static file
             app.UseFileServer();
-
+            app.UseNodeModules(env.ContentRootPath);
             app.UseMvc(ConfigureRoutes);  
 
             //app.UseWelcomePage(new WelcomePageOptions
