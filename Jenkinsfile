@@ -23,7 +23,7 @@ try {
         node (nodeToExecute) {
             bat """
                 nuget restore IISIntegration.sln
-                "${tool('MSBuild')}/MSBuild.exe" "${env.WORKSPACE}"/IISIntegration.sln /p:Configuration=Release /p:Platform="Any CPU" /p:ProductVersion=${currentBuildID}
+                "${tool('MSBuild')}/MSBuild.exe" "${env.WORKSPACE}"/NetCoreLearning.sln /p:Configuration=Release /p:Platform="Any CPU" /p:ProductVersion=${currentBuildID}
             """
         }
     }
